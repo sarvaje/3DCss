@@ -1,0 +1,59 @@
+﻿html, body {
+  height: 100%;
+}
+body {
+  font: 12px/1.2 Arial;
+  perspective: 600px;
+  background: #666;
+  background: linear-gradient(#222,#222,#444);
+  color: #fff;
+  text-align:center;
+}
+svg{
+    position: absolute;
+}
+
+.threedee {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -moz-transform-origin: 50% 50% 50%;
+    -ms-transform-origin: 50% 50% 50%;
+    -o-transform-origin: 50% 50% 50%;
+    -webkit-transform-origin: 50% 50% 50%;
+    transform-origin: 50% 50% 50%;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.assembly {
+    -moz-animation: spin 4s linear infinite;
+    -o-animation: spin 4s linear infinite;
+    -webkit-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+#box-toggle:checked ~ .assembly .face {
+  outline: 1px solid #000;
+  background: #fff !important;
+  backface-visibility: visible;
+}
+@-moz-keyframes spin {
+  to {
+    transform: rotateY(360deg) rotateZ(360deg) rotateX(720deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotateY(360deg) rotateZ(360deg) rotateX(720deg);
+  }
+}
